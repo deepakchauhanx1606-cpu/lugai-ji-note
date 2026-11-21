@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#050b14" name="theme-color"/>
+<title>For Lugai Ji — A Sincere Apology</title>
+
+<!-- Google Fonts: Cormorant Garamond for Serifs/Shayari & Plus Jakarta Sans for body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #030710;
+  --bg-gradient: radial-gradient(ellipse at 50% 0%, #102542 0%, #050b16 60%, #02050b 100%);
+  --panel: rgba(12, 24, 43, 0.75);
+  --panel-border: rgba(100, 160, 235, 0.18);
+  --panel-glow: rgba(56, 130, 220, 0.12);
+  --blue: #72bbfd;
+  --blue2: #2578cc;
+  --rose: #ff5e89;
+  --rose-glow: rgba(255, 94, 137, 0.35);
+  --gold: #f3cb81;
+  --text: #eaf2fc;
+  --muted: #a3bad4;
+  --line: rgba(70, 125, 180, 0.22);
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fixed Top Reading Progress Bar */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #388ee6, var(--rose), var(--gold));
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(114, 187, 253, 0.8);
+  transition: width 0.1s ease-out;
+}
+
+/* Ambient Canvas Background for Hero */
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  width: min(920px, 92%);
+  margin: auto;
+  padding: 0 0 80px;
+  position: relative;
+  z-index: 1;
+}
+
+/* HERO SECTION - Full Viewport Atmospheric Screen */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px 80px;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid rgba(114, 187, 253, 0.35);
+  background: rgba(14, 30, 54, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  padding: 8px 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.eyebrow {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 24px;
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 9vw, 5.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 16px 0 22px;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+.glow {
+  color: #8acaff;
+  background: linear-gradient(135deg, #ffffff 20%, #72bbfd 60%, #ff8da9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 28px rgba(114, 187, 253, 0.45));
+  position: relative;
+  display: inline-block;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  line-height: 1.8;
+  font-weight: 400;
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  animation-delay: 0.8s;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid var(--blue2);
+  background: linear-gradient(135deg, #1d6cb5 0%, #0e3763 100%);
+  color: #ffffff;
+  padding: 13px 26px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(19, 78, 138, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 120, 204, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: #5bb0ff;
+}
+
+.btn.secondary {
+  background: rgba(12, 25, 43, 0.7);
+  backdrop-filter: blur(8px);
+  border-color: var(--line);
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn.secondary:hover {
+  background: rgba(20, 40, 68, 0.85);
+  border-color: var(--blue);
+  color: #ffffff;
+}
+
+/* Animated Scroll Down Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover { opacity: 1; color: var(--blue); }
+
+.scroll-mouse {
+  width: 22px;
+  height: 36px;
+  border: 2px solid rgba(114, 187, 253, 0.4);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--blue);
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  80% { transform: translate(-50%, 14px); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 0; }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTIONS & SMOOTH SCROLL REVEAL */
+.section-wrapper {
+  position: relative;
+}
+
+/* Vertical Thread Connector Line */
+.section-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, transparent 0%, rgba(56, 130, 220, 0.25) 15%, rgba(255, 94, 137, 0.2) 85%, transparent 100%);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  padding: clamp(26px, 5vw, 44px);
+  margin: 40px 0;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s ease;
+}
+
+/* Scroll Reveal State */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(42px) scale(0.98);
+  filter: blur(4px);
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.section p {
+  margin: 0;
+  color: #d9e7f7;
+  font-size: 1.05rem;
+}
+
+.section p + p {
+  margin-top: 16px;
+}
+
+.number {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.quote {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #ffffff !important;
+  border-left: 3px solid var(--rose);
+  background: rgba(255, 94, 137, 0.05);
+  border-radius: 0 12px 12px 0;
+  padding: 14px 20px;
+  margin-top: 24px !important;
+  box-shadow: inset 0 0 15px rgba(255, 94, 137, 0.03);
+}
+
+/* 30 SHAYARI GRID LAYOUT */
+.shayari-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+@media (max-width: 640px) {
+  .shayari-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.shayari-card {
+  background: rgba(8, 18, 34, 0.6);
+  border: 1px solid rgba(100, 160, 235, 0.15);
+  border-radius: 16px;
+  padding: 18px 22px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.shayari-card:hover {
+  border-color: rgba(255, 94, 137, 0.4);
+  background: rgba(14, 28, 52, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 94, 137, 0.1);
+}
+
+.shayari-card .quote {
+  margin-top: 0 !important;
+  border-left: 2px solid var(--blue);
+  background: transparent;
+  padding: 4px 0 4px 14px;
+  border-radius: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.shayari-card:hover .quote {
+  border-left-color: var(--rose);
+}
+
+.shayari-num {
+  font-size: 0.72rem;
+  color: var(--muted);
+  opacity: 0.6;
+  margin-bottom: 6px;
+  letter-spacing: 0.1em;
+}
+
+/* MUSIC SECTION */
+.music {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(14, 30, 54, 0.8), rgba(25, 18, 40, 0.8));
+}
+
+.music p {
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+/* FORM SECTION */
+.form-intro {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.question {
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+.question:first-of-type {
+  border-top: 0;
+}
+
+.question label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.question textarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+  background: rgba(4, 11, 22, 0.85);
+  border: 1px solid rgba(70, 125, 180, 0.35);
+  border-radius: 14px;
+  padding: 14px 16px;
+  color: white;
+  font-family: inherit;
+  font-size: 0.98rem;
+  transition: all 0.3s ease;
+}
+
+.question textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 16px rgba(114, 187, 253, 0.25);
+  background: rgba(6, 16, 32, 0.95);
+}
+
+.small {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.status {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 12px;
+  display: none;
+  font-weight: 500;
+}
+
+.status.ok {
+  display: block;
+  background: rgba(16, 53, 34, 0.9);
+  border: 1px solid #267449;
+  color: #d7ffe6;
+}
+
+.status.err {
+  display: block;
+  background: rgba(57, 27, 32, 0.9);
+  border: 1px solid #85404a;
+  color: #ffe2e5;
+}
+
+/* ==========================================================================
+   INTERACTIVE ROSE GIFT UNWRAPPING EXPERIENCE
+   ========================================================================== */
+.rose-apology-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px auto 20px;
+  padding: 40px 24px 36px;
+  max-width: 560px;
+  border: 1px solid rgba(255, 140, 170, 0.28);
+  border-radius: 28px;
+  background: radial-gradient(circle at 50% 30%, rgba(35, 18, 42, 0.95), rgba(7, 14, 28, 0.98));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), inset 0 0 40px rgba(255, 94, 137, 0.08);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Floating Rose Petals Container */
+.petals-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.floating-petal {
+  position: absolute;
+  background: radial-gradient(circle at 30% 30%, #ff7fa2, #e62e5c);
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+}
+
+@keyframes floatPetal {
+  0% {
+    transform: translate(0, -20px) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  20% { opacity: 0.85; }
+  100% {
+    transform: translate(var(--dx), 320px) rotate(var(--dr)) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.rose-scene-label {
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* Gift Stage & Pedestal */
+.gift-stage {
+  position: relative;
+  width: 260px;
+  height: 240px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 10px 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.pedestal-glow {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 35px;
+  background: radial-gradient(ellipse at center, rgba(255, 94, 137, 0.4) 0%, rgba(243, 203, 129, 0.2) 50%, transparent 75%);
+  border-radius: 50%;
+  animation: pedestalPulse 3s ease-in-out infinite;
+}
+
+@keyframes pedestalPulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 12px var(--rose-glow)); }
+}
+
+/* Gift Box Component */
+.gift-box-wrapper {
+  position: relative;
+  width: 140px;
+  height: 130px;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gift-stage:hover .gift-box-wrapper {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Box Body */
+.gift-box-body {
+  position: absolute;
+  bottom: 0;
+  width: 140px;
+  height: 95px;
+  background: linear-gradient(135deg, #701026 0%, #3e0714 100%);
+  border-radius: 12px;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 94, 137, 0.2);
+  overflow: hidden;
+}
+
+/* Box Vertical Ribbon */
+.gift-ribbon-v {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 26px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #d4af37, #fff3a8, #aa820a);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+/* Box Lid */
+.gift-box-lid {
+  position: absolute;
+  top: 22px;
+  left: -6px;
+  width: 152px;
+  height: 30px;
+  background: linear-gradient(135deg, #8c1430 0%, #4a0918 100%);
+  border-radius: 8px;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  transition: transform 0.8s cubic-bezier(0.34, 1.36, 0.64, 1), opacity 0.6s ease;
+  transform-origin: top left;
+}
+
+.gift-box-lid .gift-ribbon-v {
+  top: 0;
+  height: 100%;
+}
+
+/* Ribbon Bow on top of Lid */
+.gift-bow {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 30px;
+  z-index: 5;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+.bow-loop {
+  position: absolute;
+  width: 28px;
+  height: 22px;
+  background: linear-gradient(135deg, #fff3a8, #d4af37);
+  border-radius: 50% 50% 10% 50%;
+  border: 1px solid #967410;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.bow-loop.left { left: 2px; transform: rotate(-25deg); }
+.bow-loop.right { right: 2px; transform: scaleX(-1) rotate(-25deg); }
+
+.bow-center {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #fff099;
+  border-radius: 50%;
+  border: 1px solid #967410;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* Detailed Vector SVG Rose */
+.svg-rose-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.3);
+  width: 160px;
+  height: 210px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s ease;
+  filter: drop-shadow(0 10px 25px rgba(255, 50, 100, 0.5));
+}
+
+.rose-bloom-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Blooming Petals Animation */
+.petal-outer { transition: transform 1.4s ease; transform-origin: center bottom; }
+.petal-inner { transition: transform 1.4s ease; transform-origin: center bottom; }
+
+/* Gift Tag */
+.gift-tag {
+  position: absolute;
+  top: 55px;
+  right: -25px;
+  background: #fff8e7;
+  color: #5c0a1d;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transform: rotate(12deg) scale(0);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s;
+  z-index: 6;
+  border: 1px solid #d4af37;
+}
+
+.gift-tag::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #5c0a1d;
+  border-radius: 50%;
+}
+
+/* Tap Prompt Button */
+.tap-prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(255, 94, 137, 0.2), rgba(243, 203, 129, 0.2));
+  border: 1px solid rgba(255, 200, 220, 0.4);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(255, 94, 137, 0.2);
+  animation: promptPulse 2s ease-in-out infinite;
+}
+
+.tap-prompt:hover {
+  background: linear-gradient(135deg, rgba(255, 94, 137, 0.35), rgba(243, 203, 129, 0.35));
+  transform: scale(1.05);
+}
+
+@keyframes promptPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 94, 137, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(255, 94, 137, 0.5); }
+}
+
+/* Opened Gift State Styling */
+.rose-apology-scene.is-opened .gift-box-lid {
+  transform: translateY(-90px) rotate(-28deg);
+  opacity: 0.15;
+}
+
+.rose-apology-scene.is-opened .gift-bow {
+  transform: translateX(-50%) translateY(-60px) scale(0.3);
+  opacity: 0;
+}
+
+.rose-apology-scene.is-opened .svg-rose-container {
+  transform: translateX(-50%) translateY(-75px) scale(1.15);
+  opacity: 1;
+}
+
+.rose-apology-scene.is-opened .svg-rose-container .petal-outer {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.rose-apology-scene.is-opened .gift-tag {
+  transform: rotate(8deg) scale(1);
+}
+
+.rose-apology-scene.is-opened .tap-prompt {
+  display: none;
+}
+
+/* Reveal Messages inside Gift */
+.sorry-message-wrap {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.6s;
+  z-index: 2;
+  margin-top: -10px;
+}
+
+.rose-apology-scene.is-opened .sorry-message-wrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sorry-message {
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 20px rgba(255, 94, 137, 0.6);
+}
+
+.sorry-submessage {
+  max-width: 420px;
+  margin: 10px auto 0;
+  color: #dbe8f7;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.sorry-heart {
+  display: inline-block;
+  color: var(--rose);
+  animation: sorryHeartbeat 1.5s ease-in-out infinite;
+}
+
+.replay-btn {
+  display: none;
+  margin-top: 14px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.replay-btn:hover { color: #ffffff; }
+
+.rose-apology-scene.is-opened .replay-btn {
+  display: inline-block;
+}
+
+@keyframes sorryHeartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.25); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.18); }
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 40px 10px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal-section { transition: none !important; transform: none !important; opacity: 1 !important; filter: none !important; }
+  .pill, .eyebrow, .hero h1, .hero p, .actions, .scroll-indicator { animation: none !important; opacity: 1 !important; }
+  .pedestal-glow, .scroll-wheel, .sorry-heart, .tap-prompt { animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Fixed Progress Bar -->
+<div id="progress-bar" aria-hidden="true"></div>
+
+<main>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <span class="pill">A note written with honesty</span>
+      <div class="eyebrow">Kisi khaas ke naam</div>
+      <h1>Dear <span class="glow">Lugai Ji</span></h1>
+      <p>Ye page tumhe manana ya tum par koi pressure daalne ke liye nahi, balki dil ki woh baat kehne ke liye hai jo mujhe pehle hi kehni chahiye thi. Tum mere liye bahut khaas ho, aur meri galti ke liye tumse dil se maafi maangta hoon.</p>
+      <div class="actions">
+        <a class="btn" href="#my-apology">Meri baat sun lo</a>
+        <a class="btn secondary" href="#your-words">Tumhari baat (optional)</a>
+      </div>
+    </div>
+    
+    <!-- Scroll Down Prompt -->
+    <a href="#my-apology" class="scroll-indicator" aria-label="Scroll down to read">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll</span>
+    </a>
+  </header>
+
+  <div class="section-wrapper">
+    <!-- SECTION 01 -->
+    <section class="section reveal-section" id="my-apology">
+      <div class="number">01 / DIL SE MAAFI</div>
+      <h2>Galti meri thi, aur mujhe sach mein afsos hai.</h2>
+      <p>Sabse pehle, dil se sorry. Maine tumse jis tarah baat ki, woh bilkul galat tha. Tum jaisi pyaari, samajhdaar aur soft-hearted insaan ko mere alfaaz se hurt hona pada, aur iska mujhe sach mein afsos hai. Tum izzat aur narmi se baat kiye jaane ki haqdar ho—hamesha.</p>
+      <p>Main apni galti ko kisi bahaane ke peeche nahi chhupaunga. Ek sorry se sab kuch turant theek ho jaaye, aisa main expect nahi karta. Bas chahta hoon ki tum meri maafi ko mere actions mein bhi dekho, kyunki tumhara bharosa mere liye important hai.</p>
+    </section>
+
+    <!-- SECTION 02 -->
+    <section class="section reveal-section">
+      <div class="number">02 / KOI BAHAANA NAHI</div>
+      <h2>Tumhari feelings mere liye important hain.</h2>
+      <p>Tumhari feelings mere liye sach mein matter karti hain. Tumhara dil bahut narm hai, aur tum chhoti-chhoti baaton mein bhi kitni care dikha deti ho—ye baat mujhe hamesha achhi lagti hai. Mujhe tumhari baat samajhne ki koshish karni chahiye thi, na ki gusse mein aise words bolne chahiye the.</p>
+      <p>Main ye kehkar apni galti chhoti nahi karunga ki mera woh matlab nahi tha. Jo tumne mehsoos kiya, woh important hai. Agar kabhi tum khud baat karna chaho, toh main pehle tumhari poori baat sununga.</p>
+    </section>
+
+    <!-- SECTION 03 -->
+    <section class="section reveal-section">
+      <div class="number">03 / TUMHARI EHMIYAT</div>
+      <h2>Tum hamesha izzat aur pyaar se baat kiye jaane ke laayak ho.</h2>
+      <p>Tumhari khoobsurati sirf tumhari pyaari si smile ya tumhari aankhon mein nahi, balki tumhare nature mein bhi hai. Tumhari aankhon mein jo softness hai, tumhari smile se jo warmth mehsoos hoti hai, aur jis tarah tum doosron ki fikr karti ho—ye sab tumhe mere liye bahut special banata hai. Tum waqai ek bahut achhi aur soft-hearted insaan ho.</p>
+      <p>Mujhe tumhari hasi, tumhari baatein aur tumhara woh pyaara sa andaaz bahut pasand hai. Lekin in tareefon ka matlab ye nahi ki tumhe meri galti bhoolni pade. Tumhari izzat aur tumhari feelings, meri kisi bhi khwahish se pehle aati hain.</p>
+    </section>
+
+    <!-- SECTION 04 -->
+    <section class="section reveal-section">
+      <div class="number">04 / DOORI KE BAAVJOOD</div>
+      <h2>Faasle hain, par respect kabhi kam nahi honi chahiye.</h2>
+      <p>Door rehne ke bawajood tumhari chhoti si baat bhi mere din ko achha bana deti hai. Kabhi tumhari smile yaad aati hai, kabhi tumhari aankhein, aur kabhi woh pyaari si baatein. Lekin distance ya emotions—kuch bhi mere rude behaviour ka excuse nahi ho sakta.</p>
+      <p>Maine ye page apni baat kehne ke liye banaya hai, tumse reply lene ki zid karne ke liye nahi. Agar tumhe waqt ya space chahiye, toh main uski respect karunga. Tum apni marzi se, apne time par hi baat karna.</p>
+    </section>
+
+    <!-- SECTION 05 -->
+    <section class="section reveal-section">
+      <div class="number">05 / KHUD MEIN BADLAAV</div>
+      <h2>Sorry ke saath actions bhi zaroori hain.</h2>
+      <p>Main chahta hoon ki main tumse sirf achhe mood mein hi nahi, balki disagreement ke waqt bhi pyaar aur respect se baat karun. Pehle tumhari baat dhyaan se sunna, gusse mein ruk jaana, aur hurtful words se bachna—ye sab mujhe apne behaviour mein laana hai.</p>
+      <p>Main bade-bade promises karke tumhe convince nahi karna chahta. Main bas itna chahta hoon ki waqt ke saath tumhe mere actions mein farq dikhe. Tum mere liye important ho, isliye mujhe apne aap ko behtar banana chahiye.</p>
+    </section>
+
+    <!-- SECTION 06 -->
+    <section class="section reveal-section">
+      <div class="number">06 / KOI PRESSURE NAHI</div>
+      <h2>Jitna waqt chahiye, utna lena.</h2>
+      <p>Tumhe abhi mujhe maaf karna zaroori nahi hai. Tum naraz ho, hurt ho, ya filhaal baat nahi karna chahti—main tumhari feelings ko samajhne ki koshish karunga. Tumhe apni feelings chhupakar mujhe theek feel karwane ki zaroorat bilkul nahi.</p>
+      <p>Main tumse turant 'it's okay' sunne ki umeed nahi rakhunga. Tum jitna waqt lena chaho, le sakti ho. Tumhara sukoon aur tumhari boundaries mere liye important hain.</p>
+    </section>
+
+    <!-- SECTION 07 -->
+    <section class="section reveal-section">
+      <div class="number">07 / EK CHHOTI SI KHWAHISH</div>
+      <h2>Kaash waqt ke saath tumhara mann halka ho.</h2>
+      <p>Dil se chahta hoon ki tumhare chehre ki woh pyaari si smile phir se waise hi bani rahe. Tumhari khushi dekhna mujhe achha lagta hai, lekin main ye bhi samajhta hoon ki tumhari khushi ki zimmedari tumhari hai—main tum par khush rehne ka pressure nahi daal sakta.</p>
+      <p>Agar kabhi tum baat karna chaho, toh main bina beech mein roke tumhari baat sununga. Main tumhe samajhna chahta hoon, apni safai dene ke liye nahi, balki isliye kyunki tumhari feelings mere liye sach mein matter karti hain.</p>
+    </section>
+
+    <!-- SECTION 08 -->
+    <section class="section reveal-section">
+      <div class="number">08 / HUMARI YAADEIN</div>
+      <h2>Achhe pal aaj bhi mere liye khaas hain.</h2>
+      <p>Humari chhoti-chhoti yaadein mere dil ke kareeb hain—woh hasi-mazaak, random baatein aur tumhara pyaara sa andaaz. Kabhi tumhari smile yaad aati hai toh apne aap chehre par bhi smile aa jaati hai. Ye sab mere liye bahut precious hai.</p>
+      <p>Tumne jo care, time aur pyaar share kiya, uske liye thank you. Main un yaadon ko tum par koi haq jatane ke liye use nahi karunga. Main bas unke liye grateful hoon.</p>
+    </section>
+
+    <!-- SECTION 09 -->
+    <section class="section reveal-section">
+      <div class="number">09 / MERA KHUD SE VAADA</div>
+      <h2>Ab alfaaz soch-samajh kar chununga.</h2>
+      <p>Main khud se ye vaada karna chahta hoon ki gusse ya frustration mein bhi tumse tameez aur pyaar se baat karunga. Tumhari baat ko lightly nahi lunga, aur agar kabhi disagreement hua toh use samajhdari se handle karunga.</p>
+      <p>Trust sirf sweet messages se nahi banta; woh roz ke behaviour se banta hai. Isliye main tumse meri baaton par turant yakeen karne ko nahi kahunga. Main apne actions se apni sincerity dikhane ki koshish karunga.</p>
+    </section>
+
+    <!-- SECTION 10 -->
+    <section class="section reveal-section">
+      <div class="number">10 / JAANE SE PEHLE</div>
+      <h2>Bas ek baar phir, dil se sorry.</h2>
+      <p>Mujhe tumhari bahut si baatein pasand hain—tumhari aankhon ki masoomiyat, tumhari smile ki warmth, tumhara soft-hearted nature aur tumhara apno ke liye care karna. Tumhari apni ek alag si sweetness hai, jo tumhe tum banati hai. Aur haan, tumse galti ya narazgi ho sakti hai; phir bhi tum respect aur kindness deserve karti ho.</p>
+      <p class="quote">Maine tumhe hurt kiya, aur uske liye main dil se sorry hoon. Kaash main us waqt apne alfaaz sambhaal paata. Main tumhe kisi jawab, maafi ya faisle ke liye force nahi karunga. Bas itna chahta hoon ki tum hamesha khush, safe aur respected feel karo—chahe tum mujhse baat karo ya na karo.</p>
+    </section>
+
+    <!-- 30 DIL SE LIKHI SHAYARI SECTION -->
+    <section class="section reveal-section">
+      <div class="number">30 DIL SE LIKHI SHAYARI</div>
+      <h2>Kuch alfaaz, sirf tumhare liye...</h2>
+      <p>Har shayari mein thoda sa afsos, thodi si yaad aur tumhare liye bahut saara pyaar hai. Aakhri kuch alfaaz dil ke us kone se hain jahan tumhari smile aur tumhari khushi rehti hai.</p>
+      
+      <div class="shayari-grid">
+        <div class="shayari-card"><div class="shayari-num">01 / 30</div><p class="quote">Galti meri thi, toh maan li maine,<br/>Khamoshi teri hai, uski izzat bhi jaan li maine.</p></div>
+        <div class="shayari-card"><div class="shayari-num">02 / 30</div><p class="quote">Lafzon se jo dard diya, woh yaad rahega,<br/>Behtar banne ka iraada ab saath rahega.</p></div>
+        <div class="shayari-card"><div class="shayari-num">03 / 30</div><p class="quote">Maafi maangna aasaan, badalna zaroori hai,<br/>Trust ke liye har roz koshish zaroori hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">04 / 30</div><p class="quote">Na koi bahaana, na koi safai deni hai,<br/>Bas apni galti ki zimmedari leni hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">05 / 30</div><p class="quote">Teri khamoshi ko main samajhne ki koshish karunga,<br/>Apni har baat se pehle sochne ki koshish karunga.</p></div>
+        <div class="shayari-card"><div class="shayari-num">06 / 30</div><p class="quote">Jo baat pyaar se keh sakta tha, gusse mein keh gaya,<br/>Apni hi nadani se tera dil dukha gaya.</p></div>
+        <div class="shayari-card"><div class="shayari-num">07 / 30</div><p class="quote">Rishte sirf waadon se nahi, vyavhaar se sanwarte hain,<br/>Jo ek doosre ki sunte hain, wahi dil mein utarte hain.</p></div>
+        <div class="shayari-card"><div class="shayari-num">08 / 30</div><p class="quote">Teri narazgi ko galat nahi keh sakta,<br/>Tere jazbaaton ko bina sune reh nahi sakta.</p></div>
+        <div class="shayari-card"><div class="shayari-num">09 / 30</div><p class="quote">Doori ka matlab ehsaas kam hona nahi,<br/>Par pyaar ka matlab kisi par haq jatana nahi.</p></div>
+        <div class="shayari-card"><div class="shayari-num">10 / 30</div><p class="quote">Waqt lage toh lage, main samajh sakta hoon,<br/>Teri marzi ke bina koi kadam nahi rakh sakta hoon.</p></div>
+        <div class="shayari-card"><div class="shayari-num">11 / 30</div><p class="quote">Har baat ka jawab dena zaroori nahi hota,<br/>Kabhi chup rehkar sunna bhi zaroori hota.</p></div>
+        <div class="shayari-card"><div class="shayari-num">12 / 30</div><p class="quote">Teri muskaan ki khushi apni jagah hai,<br/>Par teri marzi aur sukoon sabse pehle hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">13 / 30</div><p class="quote">Yaadein dil mein hain, koi shart nahi,<br/>Tujhse maafi maangi hai, koi zid nahi.</p></div>
+        <div class="shayari-card"><div class="shayari-num">14 / 30</div><p class="quote">Aaj alfaaz kam, ehsaas zyada hain,<br/>Apni galti ke saamne mere bahaane aadhe hain.</p></div>
+        <div class="shayari-card"><div class="shayari-num">15 / 30</div><p class="quote">Gusse ke pal mein jo keh diya, woh theek nahi tha,<br/>Tujhe hurt karna kabhi bhi mera haq nahi tha.</p></div>
+        <div class="shayari-card"><div class="shayari-num">16 / 30</div><p class="quote">Rishton ko jeetna nahi, samajhna padta hai,<br/>Apne se pehle doosre ka dil bhi padhna padta hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">17 / 30</div><p class="quote">Teri baat adhuri ho toh main sunna chahta hoon,<br/>Apni galti ko bina lade samajhna chahta hoon.</p></div>
+        <div class="shayari-card"><div class="shayari-num">18 / 30</div><p class="quote">Na jaldi ka vaada, na jawab ki aas hai,<br/>Bas itna ki teri khushi mere liye khaas hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">19 / 30</div><p class="quote">Jo toot sa gaya ho, use waqt hi jodta hai,<br/>Sirf sorry nahi, badla hua andaaz jodta hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">20 / 30</div><p class="quote">Tere faisle par mera zor nahi chalega,<br/>Jo bhi ho, tera ehtram kam nahi hoga.</p></div>
+        <div class="shayari-card"><div class="shayari-num">21 / 30</div><p class="quote">Teri hansi se din kabhi roshan sa lagta tha,<br/>Chhota sa message bhi khaas sa lagta tha.</p></div>
+        <div class="shayari-card"><div class="shayari-num">22 / 30</div><p class="quote">Teri baaton mein ek apnapan sa milta hai,<br/>Jaise bheed mein koi apna sa dikhta hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">23 / 30</div><p class="quote">Chaand se roshni udhaar nahi maangta,<br/>Teri muskaan ke aage kuch aur nahi maangta.</p></div>
+        <div class="shayari-card"><div class="shayari-num">24 / 30</div><p class="quote">Faasle raahon mein hain, yaadon mein nahi,<br/>Par tera sukoon sabse pehle, kisi zid mein nahi.</p></div>
+        <div class="shayari-card"><div class="shayari-num">25 / 30</div><p class="quote">Agar kabhi phir se baat ka mauka mile,<br/>Toh pehle se zyada samajhne ka iraada mile.</p></div>
+        <div class="shayari-card"><div class="shayari-num">26 / 30</div><p class="quote">Teri muskaan subah ki pehli roshni jaisi lage,<br/>Tera naam aaye toh din kuch khaas sa lage.</p></div>
+        <div class="shayari-card"><div class="shayari-num">27 / 30</div><p class="quote">Teri hansi mein ek pyara sa geet milta hai,<br/>Teri baaton mein dil ko sukoon sa milta hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">28 / 30</div><p class="quote">Na chaand chahiye, na taaron ka jahaan,<br/>Teri khushi se roshan rahe mera aasman.</p></div>
+        <div class="shayari-card"><div class="shayari-num">29 / 30</div><p class="quote">Teri yaad aaye toh chehra khil sa jaata hai,<br/>Ek chhota sa pal bhi khoobsurat ban jaata hai.</p></div>
+        <div class="shayari-card"><div class="shayari-num">30 / 30</div><p class="quote">Agar kabhi hum phir se nayi baat shuru karein,<br/>Toh izzat, sachchai aur pyaar se har din roshan karein.</p></div>
+      </div>
+    </section>
+
+    <!-- MUSIC SECTION -->
+    <section class="section reveal-section music">
+      <div>
+        <h2 style="margin-bottom:4px">Ek gaana, agar tumhara mann ho</h2>
+        <p>Koi autoplay nahi—sirf tabhi sunna jab tumhara mann kare.</p>
+      </div>
+      <a class="btn secondary" href="https://youtu.be/yQ6d627OZig?si=AVdEJ3s-UaHr4u2E" rel="noopener noreferrer" target="_blank">Gaana suno ↗</a>
+    </section>
+
+    <!-- OPTIONAL FORM SECTION -->
+    <section class="section reveal-section" id="your-words">
+      <div class="number">OPTIONAL / TUMHARI BAAT</div>
+      <h2>Agar tum apni feelings batana chaho</h2>
+      <p class="form-intro">Sirf tab jawab dena jab tum comfortable ho. Is section ko skip karna bhi bilkul theek hai. Agar tum submit karti ho, toh tumhare likhe hue answers Deepak ko deepakchauhan.x1606@gmail.com par email honge.</p>
+      <form id="replyForm" style="margin-top:22px">
+        <div class="question"><label for="q1">1. Meri baaton se tumhe kaisa mehsoos hua?</label><textarea id="q1" maxlength="2000" name="How did my words make you feel?"></textarea></div>
+        <div class="question"><label for="q2">2. Koi aisi baat jo tum chahti thi ki main samajh paata?</label><textarea id="q2" maxlength="2000" name="Something you wish I understood"></textarea></div>
+        <div class="question"><label for="q3">3. Tumhare hisaab se ek-doosre se respect ke saath baat karna kaisa hona chahiye?</label><textarea id="q3" maxlength="2000" name="What respectful communication looks like"></textarea></div>
+        <div class="question"><label for="q4">4. Kya tumhe abhi thoda space chahiye, ya baad mein baat karna theek lagega?</label><textarea id="q4" maxlength="2000" name="Space or talking later"></textarea></div>
+        <div class="question"><label for="q5">5. Kya koi aur baat hai jo tum mujhe batana chahti ho? (Optional)</label><textarea id="q5" maxlength="2000" name="Anything else"></textarea></div>
+        <input aria-hidden="true" autocomplete="off" name="_gotcha" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
+        <p class="small" style="margin:18px 0"></p>
+        <button class="btn" id="submitBtn" type="submit">Done</button>
+        <div aria-live="polite" class="status" id="status" role="status"></div>
+        <p class="small" style="margin-top:14px">You can skip this section if you do not wish to share any answers.</p>
+      </form>
+    </section>
+
+    <!-- FINAL SECTION WITH INTERACTIVE ROSE GIFT EXPERIENCE -->
+    <section class="section reveal-section">
+      <div class="number">AAGE KE LIYE, DIL SE</div>
+      
+      <!-- Interactive Rose Gift Card -->
+      <div class="rose-apology-scene" id="roseGiftCard">
+        <div class="petals-container" id="petalsContainer"></div>
+        <div class="rose-scene-label">EK CHHOTI SI PHOOLON WALI MAAFI</div>
+        
+        <!-- Interactive Gift Stage -->
+        <div class="gift-stage" id="giftStage" title="Tap to open your rose gift">
+          <div class="pedestal-glow"></div>
+          <div class="gift-box-wrapper">
+            <!-- Box Body & Ribbon -->
+            <div class="gift-box-body">
+              <div class="gift-ribbon-v"></div>
+            </div>
+            
+            <!-- Box Lid -->
+            <div class="gift-box-lid">
+              <div class="gift-ribbon-v"></div>
+            </div>
+            
+            <!-- Ribbon Bow -->
+            <div class="gift-bow">
+              <div class="bow-loop left"></div>
+              <div class="bow-loop right"></div>
+              <div class="bow-center"></div>
+            </div>
+            
+            <!-- Detailed Blooming Vector SVG Rose -->
+            <div class="svg-rose-container" id="svgRose">
+              <svg class="rose-bloom-svg" viewBox="0 0 160 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Stem -->
+                <path d="M80 95 C82 135, 78 165, 80 205" stroke="#2d6a37" stroke-width="5" stroke-linecap="round"/>
+                
+                <!-- Stem Thorns -->
+                <path d="M78 130 C72 126, 68 126, 66 128 C73 133, 76 134, 78 135" fill="#2d6a37"/>
+                <path d="M82 165 C88 161, 92 161, 94 163 C87 168, 84 169, 82 170" fill="#2d6a37"/>
+                
+                <!-- Leaves -->
+                <g class="rose-leaf-left">
+                  <path d="M79 145 C50 135, 30 150, 22 145 C35 165, 60 162, 79 152 Z" fill="#3a8a47" stroke="#1f4e27" stroke-width="1"/>
+                  <path d="M79 148 C55 146, 35 148, 22 145" stroke="#1f4e27" stroke-width="1" opacity="0.6"/>
+                </g>
+                <g class="rose-leaf-right">
+                  <path d="M81 125 C110 115, 130 130, 138 125 C125 145, 100 142, 81 132 Z" fill="#3a8a47" stroke="#1f4e27" stroke-width="1"/>
+                  <path d="M81 128 C105 126, 125 128, 138 125" stroke="#1f4e27" stroke-width="1" opacity="0.6"/>
+                </g>
+                
+                <!-- Sepals -->
+                <path d="M68 96 C72 106, 76 112, 80 118 C84 112, 88 106, 92 96 C86 98, 74 98, 68 96 Z" fill="#24572c"/>
+                
+                <!-- Layered Rose Petals -->
+                <g class="petal-outer">
+                  <!-- Outer Left Petal -->
+                  <path d="M80 92 C50 90, 35 65, 48 42 C65 30, 80 48, 80 92 Z" fill="url(#roseGradOuter1)"/>
+                  <!-- Outer Right Petal -->
+                  <path d="M80 92 C110 90, 125 65, 112 42 C95 30, 80 48, 80 92 Z" fill="url(#roseGradOuter2)"/>
+                </g>
+                <g class="petal-inner">
+                  <!-- Mid Petal -->
+                  <path d="M80 90 C58 85, 48 50, 68 35 C88 35, 92 60, 80 90 Z" fill="url(#roseGradMid)"/>
+                  <!-- Heart Petal Center -->
+                  <path d="M80 82 C65 78, 60 52, 75 42 C90 42, 95 62, 80 82 Z" fill="url(#roseGradCore)"/>
+                  <!-- Spiral Bud Center -->
+                  <path d="M74 48 C74 42, 86 42, 84 50 C82 56, 76 54, 78 49" stroke="#ffe0e8" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </g>
+                
+                <!-- SVG Gradients -->
+                <defs>
+                  <linearGradient id="roseGradOuter1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ff3b6a"/>
+                    <stop offset="60%" stop-color="#cc0033"/>
+                    <stop offset="100%" stop-color="#7a001e"/>
+                  </linearGradient>
+                  <linearGradient id="roseGradOuter2" x1="1" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#ff4d79"/>
+                    <stop offset="60%" stop-color="#e60039"/>
+                    <stop offset="100%" stop-color="#8a0022"/>
+                  </linearGradient>
+                  <linearGradient id="roseGradMid" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#ff668c"/>
+                    <stop offset="70%" stop-color="#d90036"/>
+                    <stop offset="100%" stop-color="#800020"/>
+                  </linearGradient>
+                  <linearGradient id="roseGradCore" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ff99b3"/>
+                    <stop offset="50%" stop-color="#ff1a53"/>
+                    <stop offset="100%" stop-color="#b3002d"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            
+            <!-- Hanging Gift Tag -->
+            <div class="gift-tag">For Lugai Ji ♥</div>
+          </div>
+        </div>
+        
+        <!-- Tap Prompt -->
+        <button class="tap-prompt" id="openGiftBtn" type="button">
+          <span>🎁 Tap to open your gift</span>
+        </button>
+        
+        <!-- Unwrapped Message -->
+        <div class="sorry-message-wrap">
+          <p class="sorry-message">I'M REALLY SORRY</p>
+          <p class="sorry-submessage">Ye gulaab meri taraf se ek chhoti si maafi hai. Tum par koi pressure nahi—bas dil se sorry. <span aria-hidden="true" class="sorry-heart">♥</span></p>
+        </div>
+        
+        <button class="replay-btn" id="replayGiftBtn" type="button">↺ Watch gift opening again</button>
+      </div>
+
+      <h2>Tum meri kahaani ka bahut pyaara hissa ho.</h2>
+      <p>Kabhi-kabhi sochta hoon ki tumhari aankhon mein woh pyaari si chamak aur chehre par woh khilti hui smile dekhkar mera din kitna khoobsurat lagta hai. Tumhara soft-hearted hona, chhoti-chhoti baaton mein care dikhana aur apne andaaz se har pal ko special bana dena—ye sab mujhe tumhari aur bhi izzat karna sikhata hai. Kaash main hamesha tumse waise hi pyaar aur narmi se baat kar paata, jaisi narmi tum deserve karti ho. Main tumhe kisi waade, jawab ya faisle mein baandhna nahi chahta. Bas dil se chahta hoon ki tumhari zindagi mein hamesha khushiyaan, sukoon aur woh khoobsurat smile rahe. Aur agar kabhi tumhare dil mein humari baat phir se shuru karne ki jagah bane, toh main us mauke ko bahut pyaar, patience aur respect ke saath sambhaalunga. I care about you, Lugai Ji—aaj bhi, aur tumhari marzi ki izzat karte hue.</p>
+    </section>
+  </div>
+
+  <footer>
+    Dil se likha hai, bina kisi pressure ke. Apna khayal rakhna.<br/>— Deepak
+  </footer>
+</main>
+
+<script>
+// ==========================================
+// 1. TOP READING PROGRESS BAR LOGIC
+// ==========================================
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+  if (totalHeight > 0) {
+    const progress = (window.scrollY / totalHeight) * 100;
+    progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+  }
+}, { passive: true });
+
+// ==========================================
+// 2. HERO CANVAS: STARFIELD + NEBULA GLOW
+// ==========================================
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let stars = [];
+let nebulae = [];
+let width = 0, height = 0;
+
+function resizeCanvas() {
+  const hero = document.querySelector('.hero');
+  width = canvas.width = hero.clientWidth;
+  height = canvas.height = hero.clientHeight;
+  initStars();
+  initNebulae();
+}
+
+function initStars() {
+  stars = [];
+  const count = Math.floor((width * height) / 3200);
+  for (let i = 0; i < count; i++) {
+    stars.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 1.8 + 0.4,
+      alpha: Math.random() * 0.8 + 0.2,
+      speed: Math.random() * 0.015 + 0.005,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+}
+
+function initNebulae() {
+  nebulae = [
+    { x: width * 0.3, y: height * 0.35, r: Math.min(width, height) * 0.4, color: 'rgba(37, 120, 204, 0.18)', dx: 0.2, dy: 0.1 },
+    { x: width * 0.7, y: height * 0.55, r: Math.min(width, height) * 0.45, color: 'rgba(255, 94, 137, 0.12)', dx: -0.15, dy: 0.2 },
+    { x: width * 0.5, y: height * 0.7, r: Math.min(width, height) * 0.35, color: 'rgba(114, 187, 253, 0.14)', dx: 0.1, dy: -0.15 }
+  ];
+}
+
+function drawCanvas(time) {
+  ctx.clearRect(0, 0, width, height);
+
+  // Draw soft drifting nebulae
+  nebulae.forEach(n => {
+    n.x += Math.sin(time * 0.0005) * n.dx;
+    n.y += Math.cos(time * 0.0005) * n.dy;
+    const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r);
+    grad.addColorStop(0, n.color);
+    grad.addColorStop(1, 'rgba(3, 7, 16, 0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  // Draw twinkling stars
+  stars.forEach(s => {
+    s.phase += s.speed;
+    const currentAlpha = Math.max(0.1, Math.min(1, s.alpha + Math.sin(s.phase) * 0.35));
+    ctx.fillStyle = `rgba(225, 240, 255, ${currentAlpha})`;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(drawCanvas);
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+requestAnimationFrame(drawCanvas);
+
+// ==========================================
+// 3. INTERSECTION OBSERVER FOR SCROLL REVEAL
+// ==========================================
+const revealElements = document.querySelectorAll('.reveal-section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach(el => observer.observe(el));
+
+// ==========================================
+// 4. INTERACTIVE ROSE GIFT UNWRAPPING SCRIPT
+// ==========================================
+const roseGiftCard = document.getElementById('roseGiftCard');
+const giftStage = document.getElementById('giftStage');
+const openGiftBtn = document.getElementById('openGiftBtn');
+const replayGiftBtn = document.getElementById('replayGiftBtn');
+const petalsContainer = document.getElementById('petalsContainer');
+
+function openGift() {
+  if (roseGiftCard.classList.contains('is-opened')) return;
+  roseGiftCard.classList.add('is-opened');
+  spawnPetalsBurst();
+}
+
+function resetGift() {
+  roseGiftCard.classList.remove('is-opened');
+  petalsContainer.innerHTML = '';
+}
+
+function spawnPetalsBurst() {
+  petalsContainer.innerHTML = '';
+  const petalCount = 18;
+  for (let i = 0; i < petalCount; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'floating-petal';
+    
+    // Random sizes & positions
+    const size = Math.random() * 12 + 10;
+    const left = Math.random() * 90 + 5;
+    const dx = (Math.random() - 0.5) * 140 + 'px';
+    const dr = (Math.random() - 0.5) * 400 + 'deg';
+    const delay = Math.random() * 1.5 + 's';
+    const duration = Math.random() * 2.5 + 3.5 + 's';
+    
+    petal.style.width = size + 'px';
+    petal.style.height = (size * 1.3) + 'px';
+    petal.style.left = left + '%';
+    petal.style.top = '10%';
+    petal.style.setProperty('--dx', dx);
+    petal.style.setProperty('--dr', dr);
+    petal.style.animation = `floatPetal ${duration} cubic-bezier(0.25, 1, 0.5, 1) ${delay} forwards`;
+    
+    petalsContainer.appendChild(petal);
+  }
+}
+
+giftStage.addEventListener('click', openGift);
+openGiftBtn.addEventListener('click', openGift);
+replayGiftBtn.addEventListener('click', () => {
+  resetGift();
+  setTimeout(openGift, 300);
+});
+
+// ==========================================
+// 5. FORMSPREE SUBMISSION HANDLER
+// ==========================================
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mljbprdo";
+const form = document.getElementById('replyForm');
+const statusBox = document.getElementById('status');
+const submitBtn = document.getElementById('submitBtn');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  statusBox.className = 'status';
+  statusBox.textContent = '';
+  
+  if(!FORMSPREE_ENDPOINT.startsWith('https://formspree.io/f/')) {
+    statusBox.className = 'status err';
+    statusBox.textContent = 'This form is not connected yet. The owner needs to add the Formspree endpoint first.';
+    return;
+  }
+  
+  const hasAnswer = [...form.querySelectorAll('textarea')].some(x => x.value.trim());
+  if(!hasAnswer) {
+    statusBox.className = 'status err';
+    statusBox.textContent = 'Abhi koi jawab nahi likha hai. Tum chaaho toh form blank chhod sakti ho.';
+    return;
+  }
+  
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Bhej rahe hain…';
+  
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    
+    if(response.ok) {
+      form.reset();
+      statusBox.className = 'status ok';
+      statusBox.textContent = 'Tumhare answers successfully bhej diye gaye hain. Share karne ke liye thank you.';
+    } else {
+      let msg = 'Abhi answers send nahi ho paaye. Thodi der baad dobara try karna.';
+      try {
+        const data = await response.json();
+        if(data.errors) msg = data.errors.map(x => x.message).join(' ');
+      } catch(_) {}
+      statusBox.className = 'status err';
+      statusBox.textContent = msg;
+    }
+  } catch(_) {
+    statusBox.className = 'status err';
+    statusBox.textContent = 'Internet connection ki wajah se answers send nahi ho paaye. Connection check karke dobara try karna.';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Done';
+  }
+});
+</script>
+</body>
+</html>
